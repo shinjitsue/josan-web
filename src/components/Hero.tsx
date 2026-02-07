@@ -1,11 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Globe, Zap } from "lucide-react";
+import { ArrowRight, Shield, Globe, Zap, ThumbsUp, MessageSquare, MoreHorizontal, Eye, EyeOff, Smile, Camera, Sticker, FileVideo, MessageCircle } from "lucide-react";
+import { PiShareFatLight } from "react-icons/pi";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export default function Hero() {
+  const [isCensored, setIsCensored] = useState(true);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
@@ -69,51 +73,163 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Visual Mockup Area */}
+        {/* Visual Mockup Area - Browser Window Style */}
         <motion.div 
            initial={{ opacity: 0, scale: 0.9, rotateX: 20 }}
            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
            transition={{ delay: 0.9, duration: 1, type: "spring" }}
-           className="mt-20 relative w-full max-w-5xl perspective-1000"
+           className="mt-20 relative w-full high-end-dashboard-mockup perspective-1000 mx-auto max-w-3xl"
         >
-          {/* Glass Card Container reflecting the UI from screenshots */}
-          <div className="relative z-10 glass-card p-4 md:p-8 rounded-2xl border border-white/10 shadow-2xl bg-[#0a0a0a]/80">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               {/* Feature 1 */}
-               <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors flex flex-col items-center text-center">
-                  <div className="p-3 rounded-lg bg-primary/20 text-primary mb-4">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">61 Threats Blocked</h3>
-                  <p className="text-sm text-zinc-400">Real-time protection stats visible at a glance.</p>
-               </div>
-               {/* Feature 2 */}
-               <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors flex flex-col items-center text-center">
-                  <div className="p-3 rounded-lg bg-blue-500/20 text-blue-400 mb-4">
-                    <Globe className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Multilingual</h3>
-                  <p className="text-sm text-zinc-400">Scanning content across 12+ languages instantly.</p>
-               </div>
-               {/* Feature 3 */}
-               <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors flex flex-col items-center text-center">
-                  <div className="p-3 rounded-lg bg-yellow-500/20 text-yellow-400 mb-4">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Context Aware</h3>
-                  <p className="text-sm text-zinc-400">AI understands intent, reducing false positives.</p>
-               </div>
-            </div>
-            
-            {/* Fake UI Elements representing the extension interface */}
-            <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between opacity-50">
+          {/* Browser Window Container */}
+          <div className="relative z-10 bg-[#0d0d0d] rounded-xl border border-white/10 shadow-2xl overflow-hidden ring-1 ring-white/5">
+             
+             {/* Browser Header */}
+             <div className="flex items-center gap-4 px-4 py-3 bg-white/5 border-b border-white/5">
                 <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
-                <div className="h-2 w-32 bg-white/10 rounded-full" />
-            </div>
+                <div className="flex-1 bg-black/40 rounded-md px-3 py-1.5 text-xs text-zinc-500 flex items-center gap-2 font-mono">
+                   <div className="w-3 h-3 rounded-full border border-zinc-600" />
+                   <span>https://social-media-feed.com</span>
+                </div>
+             </div>
+
+             {/* Browser Content */}
+             <div className="p-6 space-y-6 bg-[#0a0a0a]">
+                
+                {/* HARMFUL POST */}
+                <div className="relative font-sans text-sm">
+                   
+                   {/* Post Container - Facebook Dark Mode Style */}
+                   <div className="bg-[#242526] rounded-xl overflow-hidden shadow-lg border border-white/5 text-left">
+                      
+                      {/* Post Header */}
+                      <div className="p-3 flex items-start justify-between">
+                         <div className="flex gap-3">
+                            <div className="w-10 h-10 rounded-full bg-zinc-600 flex-shrink-0 relative overflow-hidden">
+                               <svg className="w-full h-full text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                               </svg>
+                            </div>
+                            <div>
+                               <h3 className="text-[#E4E6EB] font-semibold text-[15px] leading-tight">Saiba Sangetsu</h3>
+                               <div className="flex items-center gap-1.5 text-[#B0B3B8] text-[13px] mt-0.5">
+                                  <span>November 28, 2025</span>
+                                  <span>·</span>
+                                  <Globe className="w-3 h-3" />
+                               </div>
+                            </div>
+                         </div>
+                         <button className="text-[#B0B3B8] hover:bg-white/10 p-2 rounded-full transition-colors">
+                            <MoreHorizontal className="w-5 h-5" />
+                         </button>
+                      </div>
+
+                      {/* Post Content Area */}
+                      <div className="px-3 pb-1">
+                         {isCensored ? (
+                            <div className="mt-1 mb-3 flex justify-start">
+                               <div className="bg-[#FFD1D1] px-5 py-2.5 rounded-full inline-flex items-center gap-3 select-none">
+                                  <span className="text-[#D93025] font-bold text-[16px]">Harmful Content Blocked</span>
+                                  <div className="bg-white/50 rounded-full p-0.5">
+                                     <EyeOff className="w-4 h-4 text-[#D93025]" />
+                                  </div>
+                               </div>
+                            </div>
+                         ) : (
+                            <div className="text-[#E4E6EB] text-[15px] pb-4">
+                               <p>You are honestly the worst person I have ever met. Nobody likes you at all.</p>
+                               <button 
+                                  onClick={() => setIsCensored(true)}
+                                  className="text-primary hover:underline text-sm mt-2 block"
+                               >
+                                  Hide content
+                               </button>
+                            </div>
+                         )}
+
+                         {!isCensored && (
+                            <div className="mt-2 text-xs text-red-400 font-medium bg-red-500/10 px-3 py-2 rounded border border-red-500/20">
+                               Flagged: Harassment detected (98% confidence)
+                            </div>
+                         )}
+                      </div>
+
+                      {/* Interaction Stats */}
+                      <div className="px-3 py-1 flex items-center justify-between text-[#B0B3B8] text-[13px] border-b border-[#3E4042]">
+                         <div className="flex items-center gap-1.5">
+                             {/* Keep it simple for stats */}
+                         </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="px-2 py-0.5 flex items-center justify-between border-b border-[#3E4042]">
+                         <button className="flex-1 flex items-center justify-center gap-2 py-1.5 text-[#B0B3B8] hover:bg-[#3A3B3C] rounded-md transition-colors font-medium cursor-default">
+                            <ThumbsUp className="w-5 h-5" />
+                            <span>Like</span>
+                         </button>
+                         <button className="flex-1 flex items-center justify-center gap-2 py-1.5 text-[#B0B3B8] hover:bg-[#3A3B3C] rounded-md transition-colors font-medium cursor-default">
+                            <MessageCircle className="w-5 h-5" />
+                            <span>Comment</span>
+                         </button>
+                         <button className="flex-1 flex items-center justify-center gap-2 py-1.5 text-[#B0B3B8] hover:bg-[#3A3B3C] rounded-md transition-colors font-medium cursor-default">
+                            <PiShareFatLight className="w-5 h-5" />
+                            <span>Share</span>
+                         </button>
+                      </div>
+
+                      {/* Comment Section */}
+                      <div className="p-3 flex gap-2">
+                         <div className="w-8 h-8 rounded-full bg-zinc-700 flex-shrink-0 relative overflow-hidden">
+                             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 text-white text-xs font-bold">
+                                JS
+                             </div>
+                         </div>
+                         <div className="flex-1 bg-[#3A3B3C] rounded-full px-3 py-1.5 flex items-center justify-between">
+                            <span className="text-[#B0B3B8] text-[15px] pl-1 cursor-text">Write a comment...</span>
+                            <div className="flex items-center gap-2 text-[#B0B3B8] opacity-70">
+                               <div className="w-6 h-6 rounded-full hover:bg-white/10 flex items-center justify-center cursor-pointer">
+                                  <Smile className="w-5 h-5" />
+                               </div>
+                               <div className="w-6 h-6 rounded-full hover:bg-white/10 flex items-center justify-center cursor-pointer">
+                                  <Camera className="w-5 h-5" />
+                               </div>
+                               <div className="w-6 h-6 rounded-full hover:bg-white/10 flex items-center justify-center cursor-pointer">
+                                  <FileVideo className="w-5 h-5" />
+                               </div>
+                               <div className="w-6 h-6 rounded-full hover:bg-white/10 flex items-center justify-center cursor-pointer">
+                                  <Sticker className="w-5 h-5" />
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+
+                   </div>
+                </div>
+
+                {/* SAFE POST */}
+                <div className="bg-[#1a1a1a] rounded-xl p-4 border border-white/5 relative">
+                   <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-white/10 animate-pulse" />
+                      <div className="space-y-2">
+                         <div className="h-2.5 w-24 bg-white/10 rounded-full animate-pulse" />
+                         <div className="h-2 w-16 bg-white/5 rounded-full animate-pulse" />
+                      </div>
+                   </div>
+                   <div className="space-y-2 mb-4">
+                      <div className="h-2.5 w-full bg-white/10 rounded-full animate-pulse" />
+                      <div className="h-2.5 w-[90%] bg-white/10 rounded-full animate-pulse" />
+                      <div className="h-2.5 w-[60%] bg-white/10 rounded-full animate-pulse" />
+                   </div>
+                   {/* Safe Badge */}
+                   <div className="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase tracking-wider">
+                      Safe
+                   </div>
+                </div>
+
+             </div>
           </div>
           
           {/* Decorative Glows */}

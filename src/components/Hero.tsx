@@ -12,7 +12,7 @@ export default function Hero() {
   const [isCensored, setIsCensored] = useState(true);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pt-32 md:pt-40 pb-20">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-full opacity-50 animate-pulse-slow" />
@@ -225,9 +225,7 @@ export default function Hero() {
                       <div className="h-2.5 w-[60%] bg-gray-500/10 rounded-full animate-pulse" />
                    </div>
                    {/* Safe Badge */}
-                   <div className="absolute top-4 right-4 bg-green-500/20 text-green-300 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase tracking-wider backdrop-blur-sm">
-                      Safe
-                   </div>
+
                 </div>
 
              </div>

@@ -12,7 +12,7 @@ export default function Hero() {
   const [isCensored, setIsCensored] = useState(true);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pt-32 md:pt-40 pb-20">
+    <section className="relative flex flex-col items-center justify-start overflow-hidden pt-32 md:pt-40 pb-20">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-full opacity-50 animate-pulse-slow" />
@@ -79,7 +79,7 @@ export default function Hero() {
            initial={{ opacity: 0, scale: 0.9, rotateX: 20 }}
            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
            transition={{ delay: 0.9, duration: 1, type: "spring" }}
-           className="mt-20 relative w-full high-end-dashboard-mockup perspective-1000 mx-auto max-w-3xl"
+           className="mt-32 relative w-full high-end-dashboard-mockup perspective-1000 mx-auto max-w-3xl"
         >
           {/* Browser Window Container */}
           <div className="relative z-10 bg-black/40 glass-card backdrop-blur-xl rounded-xl border border-white/10 shadow-2xl overflow-hidden ring-1 ring-white/5">

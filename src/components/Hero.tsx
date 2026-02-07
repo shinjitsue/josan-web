@@ -6,6 +6,7 @@ import { PiShareFatLight } from "react-icons/pi";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Lock } from "lucide-react";
 
 export default function Hero() {
   const [isCensored, setIsCensored] = useState(true);
@@ -91,7 +92,7 @@ export default function Hero() {
                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
                 <div className="flex-1 bg-black/40 rounded-md px-3 py-1.5 text-xs text-zinc-500 flex items-center gap-2 font-mono">
-                   <div className="w-3 h-3 rounded-full border border-zinc-600" />
+                   <Lock className="w-3 h-3 rounded-full" />
                    <span>https://social-media-feed.com</span>
                 </div>
              </div>

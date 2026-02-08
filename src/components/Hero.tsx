@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 import { ArrowRight, Shield, Globe, Zap, ThumbsUp, MessageSquare, MoreHorizontal, Eye, EyeOff, Smile, Camera, Sticker, FileVideo, MessageCircle } from "lucide-react";
 import { PiShareFatLight } from "react-icons/pi";
 import Link from "next/link";
@@ -23,10 +24,9 @@ export default function Hero() {
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
         
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+        {/* Badge */}
+        <ScrollReveal
+          delay={0.2}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-300 text-sm font-medium mb-6 backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
@@ -34,35 +34,36 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
           v2.0 Now Available
-        </motion.div>
+        </ScrollReveal>
 
         {/* Headline */}
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl"
+        {/* Headline */}
+        <ScrollReveal 
+          delay={0.3}
+          duration={0.8}
         >
-          Experience the Web, <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-200">Filtered by Intelligence.</span>
-        </motion.h1>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl">
+            Experience the Web, <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-200">Filtered by Intelligence.</span>
+          </h1>
+        </ScrollReveal>
 
         {/* Subheadline */}
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl leading-relaxed"
+        {/* Subheadline */}
+        <ScrollReveal 
+          delay={0.5}
+          duration={0.8}
         >
-          JoSan uses advanced context-aware AI to block harmful content in real-time. 
-          Multilingual protection that understands nuance, not just keywords.
-        </motion.p>
+          <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl leading-relaxed">
+            JoSan uses advanced context-aware AI to block harmful content in real-time. 
+            Multilingual protection that understands nuance, not just keywords.
+          </p>
+        </ScrollReveal>
 
         {/* CTA Buttons */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+        {/* CTA Buttons */}
+        <ScrollReveal 
+          delay={0.7}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           <button className="group relative px-8 py-4 bg-primary text-white font-semibold rounded-full overflow-hidden shadow-[0_0_40px_rgba(109,40,217,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(109,40,217,0.6)]">
@@ -75,12 +76,13 @@ export default function Hero() {
           <button className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm">
             View Features
           </button>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Visual Mockup Area - Browser Window Style */}
         <motion.div 
            initial={{ opacity: 0, scale: 0.9, rotateX: 20 }}
-           animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+           whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+           viewport={{ once: false }}
            transition={{ delay: 0.9, duration: 1, type: "spring" }}
            className="mt-32 relative w-full high-end-dashboard-mockup perspective-1000 mx-auto max-w-3xl"
         >

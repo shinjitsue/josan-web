@@ -17,6 +17,9 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-full opacity-50 animate-pulse-slow" />
       
+      {/* Background Mesh */}
+      <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(to_top,white,transparent)] opacity-40" />
+      
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
         
         {/* Badge */}

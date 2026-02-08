@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import ParallaxElement from "./ParallaxElement";
 import { Download, ToggleRight, Eye } from "lucide-react";
 
 const steps = [
@@ -25,7 +26,9 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 bg-zinc-950 relative overflow-hidden">
         {/* Background Mesh */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <ParallaxElement offset={40} className="absolute inset-0 pointer-events-none">
+          <div className="w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        </ParallaxElement>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">

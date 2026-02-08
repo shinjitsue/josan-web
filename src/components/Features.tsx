@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import ParallaxElement from "./ParallaxElement";
 import { Brain, Globe, Shield, Activity, Sliders, Lock } from "lucide-react";
 
 const features = [
@@ -38,8 +39,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 relative bg-black">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50" />
+    <section id="features" className="py-24 relative bg-black overflow-hidden">
+      <ParallaxElement offset={60} className="absolute inset-0 z-0 pointer-events-none">
+        <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50" />
+      </ParallaxElement>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">

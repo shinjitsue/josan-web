@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
+import ParallaxElement from "./ParallaxElement";
 import { ArrowRight, Shield, Globe, Zap, ThumbsUp, MessageSquare, MoreHorizontal, Eye, EyeOff, Smile, Camera, Sticker, FileVideo, MessageCircle } from "lucide-react";
 import { PiShareFatLight } from "react-icons/pi";
 import Link from "next/link";
@@ -16,10 +17,24 @@ export default function Hero() {
     <section className="relative flex flex-col items-center justify-start overflow-hidden pt-32 md:pt-40 pb-20">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-full opacity-50 animate-pulse-slow" />
+      
+      {/* Parallax Blobs */}
+      <ParallaxElement speed={0.3} className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] z-0 pointer-events-none">
+        <div className="w-full h-full bg-primary/20 blur-[120px] rounded-full opacity-50 animate-pulse-slow" />
+      </ParallaxElement>
+      
+      {/* Floating Particles */}
+      <ParallaxElement offset={-50} className="absolute top-1/4 left-10 z-0 pointer-events-none hidden md:block">
+         <div className="w-24 h-24 bg-purple-500/10 rounded-full blur-2xl" />
+      </ParallaxElement>
+      <ParallaxElement offset={30} className="absolute bottom-1/3 right-10 z-0 pointer-events-none hidden md:block">
+         <div className="w-32 h-32 bg-blue-500/10 rounded-full blur-2xl" />
+      </ParallaxElement>
       
       {/* Background Mesh */}
-      <div className="absolute inset-0 z-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(to_top,white,transparent)] opacity-40" />
+      <ParallaxElement speed={0.1} className="absolute inset-0 z-0 pointer-events-none">
+        <div className="w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(to_top,white,transparent)] opacity-40" />
+      </ParallaxElement>
       
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
         
